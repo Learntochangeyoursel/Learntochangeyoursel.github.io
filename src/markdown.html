@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<script>
+    function fetchAndDisplayMDFile(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(markdown => {
+                const html = marked(markdown);
+                document.getElementById('content').innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching or parsing .md file:', error);
+                document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
+            });
+    }
+
+    // 假设你的markdown文件的URL是 'example.md'
+    fetchAndDisplayMDFile('../README.md');
+</script>
+<body>
+<div id="content">
+
+
+</div>
+
+
+</body>
+</html>
