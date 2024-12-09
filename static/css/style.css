@@ -566,7 +566,7 @@ form.form{display:flex;flex-direction:column;row-gap:15px;align-items:flex-end;w
 /*=============== Side Intro ===================*/
 .sideintro{text-align:center;padding:45px 25px 120px 25px;background:#313036;position:relative;top:0;overflow:hidden;z-index:1;border-radius:6px;display:flex;align-items:center;flex-direction:column}
 .sideintro:before{content:"";position:absolute;left:20px;top:0;width:70%;height:100%;background:#000;z-index:-1;opacity:.2;-webkit-transform:skewX(-25deg);-moz-transform:skewX(-25deg);-ms-transform:skewX(-25deg);-o-transform:skewX(-25deg);transform:skewX(-25deg)}
-.sideintro-img{border:10px solid #3d3c44;position:relative;margin:0 0 30px;border-radius:50%}
+.sideintro-img{border:10px solid #3d3c44;position:relative;margin:0 0 30px;border-radius:50% }
 .sideintro-img img{border:10px solid #4f4d59;border-radius:50%}
 .sideintro h2{font-size:16px;color:#fff;line-height:1;font-weight:300;margin:0 0 15px}
 .sideintro h2 strong{font-size:20px;font-weight:500}
