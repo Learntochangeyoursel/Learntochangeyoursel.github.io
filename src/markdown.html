@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.uv.cc/markedjs/0.3.5/marked.min.js"></script>
 </head>
+
+<body>
+<div id="content"></div>
 <script>
+    // fetchAndDisplayMDFile 函数接受一个 url 参数，这是 Markdown 文件的路径
     function fetchAndDisplayMDFile(url) {
+        // 使用 fetch(url) 发起一个 GET 请求到指定的 URL。
         fetch(url)
+            // .then(response => response.text()) 将响应体转换为文本。
             .then(response => response.text())
+            // .then(markdown => { ... }) 接收转换后的文本（Markdown 内容），使用 marked(markdown) 将其转换为 HTML。
             .then(markdown => {
                 const html = marked(markdown);
+                // 将转换后的 HTML 内容设置到页面上 ID 为 content 的元素的 innerHTML 中。
                 document.getElementById('content').innerHTML = html;
             })
+            // .catch(error => { ... }) 捕获任何在请求或解析过程中发生的错误，并在控制台打印错误信息。同时，将错误信息显示在页面上。
             .catch(error => {
                 console.error('Error fetching or parsing .md file:', error);
                 document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
             });
     }
-
     // 假设你的markdown文件的URL是 'example.md'
     fetchAndDisplayMDFile('../README.md');
 </script>
-<body>
-<div id="content">
-
-
-</div>
-
 
 </body>
 </html>
