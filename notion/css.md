@@ -125,5 +125,17 @@ li{
 </body>
 </html>
 ```
+```
+/*使用过的参数*/
+margin 外边距
+padding 内边距
+background 背景
+color 颜色
+image 图片
+overflow 溢出
+border 边框
+solid 直线
+dotted 圆点线
 
+```
 
