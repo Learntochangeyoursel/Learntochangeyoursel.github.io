@@ -66,7 +66,7 @@ console.info("控制台打印")
 ## 变量
 
 JavaScript中变量命名方式有三个关键字：var let const，他们有一定的区别
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 1. var定义的变量会出现一种污染现象，俗称变量提升。
 2. let是ES6后提出的定义变量的方法，用于定义局部变量，解决var的变量污染问题。
 3. const声明的变量不可更改。
@@ -122,8 +122,8 @@ ps:变量提升：JavaScript中var定义的变量会出现在变量未定义前�
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 
 </head>
 <body>
@@ -131,17 +131,35 @@ ps:变量提升：JavaScript中var定义的变量会出现在变量未定义前�
 <div>李四</div>
 <div>王五😀</div>
 <script>
-   //getElementsByTagName()
-   //document 获取div中的内容，返回类型是数组。
-   var elementsByTagName = document.getElementsByTagName(`div`);
-   //遍历数组elementsByTagName 用innerText获取其中的文本内容并在控制台打印
-   for (let i = 0; i < elementsByTagName.length; i++) {
-      console.info(elementsByTagName[i].innerText)
-   }
+    //getElementsByTagName()
+    //document 获取div中的内容，返回类型是数组。
+    var elementsByTagName = document.getElementsByTagName(`div`);
+    //遍历数组elementsByTagName 用innerText获取其中的文本内容并在控制台打印
+    for (let i = 0; i < elementsByTagName.length; i++) {
+        console.info(elementsByTagName[i].innerText)
+    }
 </script>
 </body>
 </html>
 
 ```
+
+## 数据类型
+
+javaScript是一种弱类型语言，其数据类型只有三种分别为：String；Number；Boolean
+
+```javascript
+    var num = 123;
+    var str = "123";
+    //javaScript 中定义boolean数据类型有两种定义方式
+    var b1 = flash;
+    var b2 = Boolean(flash);
+```
+ps：特殊用法
+1. infinity 、 -infinity JavaScript中有无穷大的表示方式，可以允许除数为零。
+2. NaN：代表一个非数值。
+3. isNaN：判断一个数据是否为number类型
+4. parseInt 将string转换为number时，如果字符串以数字开头，就会返回开头的数字。
+## 运算符与流程控制
 
 
