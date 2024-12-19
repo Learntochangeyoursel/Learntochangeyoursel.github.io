@@ -160,6 +160,53 @@ ps：特殊用法
 2. NaN：代表一个非数值。
 3. isNaN：判断一个数据是否为number类型
 4. parseInt 将string转换为number时，如果字符串以数字开头，就会返回开头的数字。
-## 运算符与流程控制
+## 延时
+
+```javascript
+let element = document.getElementById("img-change");
+let num = 0
+
+function toBig() {
+    // 获取当前的宽度值，去掉'px'并转换为数字
+    let currentWidth = parseInt(element.style.width, 10);
+    // console.log(currentWidth)
+    // 在当前宽度的基础上增加30像素
+    let newWidth = currentWidth + 30;
+    // 将新的宽度值转换为字符串，并添加'px'单位
+    let newWidthString = newWidth + "px";
+    // 将新的宽度设置回元素的样式
+    element.style.width = newWidthString;
+}
+
+function toSmall() {
+    // 获取当前的宽度值，去掉'px'并转换为数字
+    let currentWidth = parseInt(element.style.width, 10);
+    // console.log(currentWidth)
+    // 在当前宽度的基础上减少30像素
+    let newWidth = currentWidth - 30;
+    // 将新的宽度值转换为字符串，并添加'px'单位
+    let newWidthString = newWidth + "px";
+    // 将新的宽度设置回元素的样式
+    element.style.width = newWidthString;
+}
+
+function inBig() {
+    clearInterval(num)
+    num = setInterval(() => {
+        toBig()
+    }, 1000)
+}
+
+function inSmall() {
+    clearInterval(num)
+    num = setInterval(() => {
+        toSmall()
+    }, 1000)
+}
+
+function inStop() {
+    clearInterval(num);
+}
+```
 
 
