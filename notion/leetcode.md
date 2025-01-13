@@ -75,8 +75,8 @@ class Solution {
 
 返回 p + 1，即为新数组长度。
 
-
 题解1
+
 ```java
   public int removeDuplicates(int[] nums) {
     if(nums == null || nums.length == 0) return 0;
@@ -102,6 +102,7 @@ class Solution {
 不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 `O(1)` 额外空间的条件下完成。
 
 题解1：
+
 ```java 
    public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length <= 2) {
@@ -132,4 +133,41 @@ class Solution {
         return x;
     }
 }
+```
+
+## 轮转数组
+
+题目描述：给定一个整数数组 `nums`，将数组中的元素向右轮转 `k` 个位置，其中 `k` 是非负数。
+
+
+```java
+public void rotate(int[] nums, int k) {
+    int n = nums.length; // 获取原数组的长度
+    int[] newArr = new int[n]; // 创建一个新的数组，大小与原数组相同
+
+    // 遍历数组
+    for (int i = 0; i < n; i++) {
+        newArr[(i + k) % n] = nums[i]; // 将元素放到正确的位置
+    }
+    System.arraycopy(newArr, 0, nums, 0, n); // 将新数组的内容复制回原数组
+}
+```
+
+```python3
+# 注：请勿使用切片，会产生额外空间
+from typing import List
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        def reverse(i: int, j: int) -> None:
+            while i < j:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+                j -= 1
+                
+        n = len(nums)
+        k %= n  # 轮转 k 次等于轮转 k%n 次
+        reverse(0, n - 1)
+        reverse(0, k - 1)
+        reverse(k, n - 1)
 ```
